@@ -6,7 +6,7 @@ Mini Map MZ
 
 ## What It Does
 
-This plugin adds a minimap to your game that displays the current map with all visual elements including.
+PSYCHRONIC_MinimapMZ.js.
 
 ## Plugin File
 
@@ -18,12 +18,35 @@ This plugin adds a minimap to your game that displays the current map with all v
 
 ## Plugin Commands
 
-- `showMinimap`
-- `hideMinimap`
-- `toggleMinimap`
-- `refreshMinimap`
-- `enableToggle`
-- `disableToggle`
+### Show Minimap
+
+- Command: `showMinimap`
+- Description: Shows the minimap.
+
+### Hide Minimap
+
+- Command: `hideMinimap`
+- Description: Hides the minimap.
+
+### Toggle Minimap
+
+- Command: `toggleMinimap`
+- Description: Toggles the minimap visibility.
+
+### Refresh Minimap
+
+- Command: `refreshMinimap`
+- Description: Refreshes the minimap parallax layers. Use after dynamically adding/removing parallaxes.
+
+### Enable Toggle
+
+- Command: `enableToggle`
+- Description: Enables the minimap toggle key functionality.
+
+### Disable Toggle
+
+- Command: `disableToggle`
+- Description: Disables the minimap toggle key functionality (minimap can only be controlled via plugin commands).
 
 ## Parameter Summary
 
@@ -37,7 +60,7 @@ This plugin adds a minimap to your game that displays the current map with all v
 - minimapOpacity: Opacity of the minimap (0-255).
 - defaultVisible: Whether the minimap is visible by default.
 - stretchToFit: If true, stretches the map to fill the entire minimap frame (may distort aspect ratio).
-- toggleKey
+- toggleKey: Key to toggle the minimap. Default is M (77).
 - toggleEnabled: Whether the player can toggle the minimap with the toggle key.
 - customMarkers: Define custom marker styles with names and images.
 - playerMarkerImage: Custom image for player marker (from img/system/). Leave blank to use default dot.
@@ -48,9 +71,7 @@ This plugin adds a minimap to your game that displays the current map with all v
 - menuMinimapY: Y position of the minimap in the menu.
 - menuFrameImage: Optional frame/background image for the menu minimap (from img/pictures/).
 - menuSelectionHidesMap: If true, minimap hides when entering submenus (Equipment, Status, etc.) and reappears when returning to main menu.
-- hideOnCharacterSelection: If true, minimap also hides during character selection screens (when choosing which actor for Equipment, Status, etc.).
-- name: The name to use in event notes (e.g., "Triangle" for <MM-SHOW: Triangle>)
-- image: The image file to use for this marker (from img/system/)
+- hideOnCharacterSelection: Disables the minimap toggle key functionality (minimap can only be controlled via plugin commands).
 
 ## Installation
 
@@ -60,6 +81,8 @@ This plugin adds a minimap to your game that displays the current map with all v
 4. Configure any plugin parameters or commands listed below.
 
 ## Full Plugin Help
+
+PSYCHRONIC_MinimapMZ.js
 
 This plugin adds a minimap to your game that displays the current map
 with all visual elements including:
@@ -103,229 +126,6 @@ Compatibility:
 Works with PSYCHRONIC_MultiParallaxMZ - automatically refreshes when parallaxes change.
 Supports default RPG Maker MZ parallax backgrounds.
 Shows pictures displayed via "Show Picture" events.
-
-@param minimapWidth
-@text Minimap Width
-@type number
-@min 50
-@max 2000
-@default 200
-@desc Width of the minimap in pixels.
-
-@param minimapHeight
-@text Minimap Height
-@type number
-@min 50
-@max 2000
-@default 150
-@desc Height of the minimap in pixels.
-
-@param minimapX
-@text Minimap X Position
-@type number
-@min 0
-@max 2000
-@default 20
-@desc X position of the minimap on screen.
-
-@param minimapY
-@text Minimap Y Position
-@type number
-@min 0
-@max 2000
-@default 20
-@desc Y position of the minimap on screen.
-
-@param frameImage
-@text Frame Image
-@type file
-@dir img/pictures/
-@default
-@desc Optional frame/background image for the minimap (from img/pictures/).
-
-@param markerColor
-@text Marker Color
-@type string
-@default #00FF00
-@desc Color of the event markers in hex format.
-
-@param playerColor
-@text Player Color
-@type string
-@default #FF0000
-@desc Color of the player marker in hex format.
-
-@param minimapOpacity
-@text Minimap Opacity
-@type number
-@min 0
-@max 255
-@default 200
-@desc Opacity of the minimap (0-255).
-
-@param defaultVisible
-@text Default Visible
-@type boolean
-@default true
-@desc Whether the minimap is visible by default.
-
-@param stretchToFit
-@text Stretch to Fit
-@type boolean
-@default false
-@desc If true, stretches the map to fill the entire minimap frame (may distort aspect ratio).
-
-@param toggleKey
-@text Toggle Key
-@type select
-@option Q
-@value 81
-@option W
-@value 87
-@option E
-@value 69
-@option R
-@value 82
-@option T
-@value 84
-@option A
-@value 65
-@option S
-@value 83
-@option D
-@value 68
-@option F
-@value 70
-@option G
-@value 71
-@option H
-@value 72
-@option J
-@value 74
-@option K
-@value 75
-@option L
-@value 76
-@option Z
-@value 90
-@option X
-@value 88
-@option C
-@value 67
-@option V
-@value 86
-@option B
-@value 66
-@option N
-@value 78
-@option M
-@value 77
-@option Tab
-@value 9
-@option Space
-@value 32
-@default 77
-@desc Key to toggle the minimap. Default is M (77).
-
-@param toggleEnabled
-@text Toggle Enabled
-@type boolean
-@default true
-@desc Whether the player can toggle the minimap with the toggle key.
-
-@param customMarkers
-@text Custom Markers
-@type struct<MarkerStyle>[]
-@default []
-@desc Define custom marker styles with names and images.
-
-@param playerMarkerImage
-@text Player Marker Image
-@type file
-@dir img/system/
-@default
-@desc Custom image for player marker (from img/system/). Leave blank to use default dot.
-
-@param showInMenu
-@text Show in Menu
-@type boolean
-@default false
-@desc Whether to show the minimap in the main menu.
-
-@param menuMinimapWidth
-@text Menu Minimap Width
-@type number
-@min 50
-@max 2000
-@default 150
-@desc Width of the minimap in the menu (in pixels).
-
-@param menuMinimapHeight
-@text Menu Minimap Height
-@type number
-@min 50
-@max 2000
-@default 150
-@desc Height of the minimap in the menu (in pixels).
-
-@param menuMinimapX
-@text Menu Minimap X Position
-@type number
-@min 0
-@max 2000
-@default 500
-@desc X position of the minimap in the menu.
-
-@param menuMinimapY
-@text Menu Minimap Y Position
-@type number
-@min 0
-@max 2000
-@default 100
-@desc Y position of the minimap in the menu.
-
-@param menuFrameImage
-@text Menu Frame Image
-@type file
-@dir img/pictures/
-@default
-@desc Optional frame/background image for the menu minimap (from img/pictures/).
-
-@param menuSelectionHidesMap
-@text Menu Selection Hides Map
-@type boolean
-@default false
-@desc If true, minimap hides when entering submenus (Equipment, Status, etc.) and reappears when returning to main menu.
-
-@param hideOnCharacterSelection
-@text Hide On Character Selection
-@type boolean
-@default false
-@desc If true, minimap also hides during character selection screens (when choosing which actor for Equipment, Status, etc.).
-
-@command showMinimap
-@text Show Minimap
-@desc Shows the minimap.
-
-@command hideMinimap
-@text Hide Minimap
-@desc Hides the minimap.
-
-@command toggleMinimap
-@text Toggle Minimap
-@desc Toggles the minimap visibility.
-
-@command refreshMinimap
-@text Refresh Minimap
-@desc Refreshes the minimap parallax layers. Use after dynamically adding/removing parallaxes.
-
-@command enableToggle
-@text Enable Toggle
-@desc Enables the minimap toggle key functionality.
-
-@command disableToggle
-@text Disable Toggle
-@desc Disables the minimap toggle key functionality (minimap can only be controlled via plugin commands).
 
 ## Source
 
