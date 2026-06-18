@@ -1,14 +1,37 @@
 # PSYCHRONIC_MinimapMZ
 
-[v 0.6] Mini Map MZ
+Mini Map MZ
 
-## What This Is
+## What It Does
 
-This repository contains a standalone **RPG Maker MZ plugin** from Psychronic.
+This plugin adds a minimap to your game that displays the current map with all visual elements including:.
 
-## Plugin File
+## Highlights
 
-- `PSYCHRONIC_MinimapMZ.js`
+- Default RPG Maker parallax backgrounds (including fixed "!" parallaxes)
+- Multi-parallax plugin layers (if using PSYCHRONIC_MultiParallaxMZ)
+- All map tile layers
+- Pictures displayed on the map
+- All events rendered as tiny sprites (they move in real-time!)
+- Custom marker icons for events
+- Player position marker
+- Put <MM-SHOW: QuestAvailable> in Page 1 comments (quest not started)
+- Put <MM-SHOW: QuestActive> in Page 2 comments (quest in progress)
+- Put no tag in Page 3 (quest completed - marker disappears!)
+
+## Plugin Commands
+
+- showMinimap
+- hideMinimap
+- toggleMinimap
+- refreshMinimap
+- enableToggle
+- disableToggle
+
+## Compatibility
+
+- RPG Maker MZ
+- JavaScript plugin for `js/plugins/`
 
 ## Installation
 
@@ -20,11 +43,11 @@ This repository contains a standalone **RPG Maker MZ plugin** from Psychronic.
 
 This version was exported from the RPG Reactor Complex template source plugin folder.
 
-Current source version: 0.6
-
 ## Author
 
 Psychronic
+
+https://psychronic.itch.io
 
 ## License
 
